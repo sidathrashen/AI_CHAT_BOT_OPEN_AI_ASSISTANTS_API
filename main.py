@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify
 import openai
 import core_functions
 import assistant
+from flask import Flask, render_template
 
 # Configure the logging level to INFO for better visibility of operations
 logging.basicConfig(level=logging.INFO)
@@ -26,6 +27,11 @@ tool_data = core_functions.load_tools_from_directory('tools')
 
 # Create a new assistant or load an existing one based on the configuration
 assistant_id = assistant.create_assistant(client, tool_data)
+
+@app.route('/')
+def index():
+    return render_template('tourism-website-template/index.html')
+
 
 # Define a route to initiate a conversation with the assistant
 @app.route('/start', methods=['GET'])
@@ -76,4 +82,4 @@ def chat():
 
 # Run the Flask app when the script is executed directly
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    app.run(debug=True)
