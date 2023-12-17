@@ -23,7 +23,7 @@ def create_assistant(client, tool_data):
         # Create a new assistant using the OpenAI client
         assistant = client.beta.assistants.create(
             instructions=config.assistant_instructions,  # Set up instructions from the config file
-            model="gpt-4-1106-preview",  # Specify the model to be used for the assistant
+            model="gpt-3.5-turbo-1106",  # Specify the model to be used for the assistant
             tools=[{"type": "retrieval"}] + tool_data["tool_configs"],  # Configure tools for the assistant
             file_ids=file_ids  # Attach resource files identified earlier
         )
