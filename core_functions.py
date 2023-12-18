@@ -35,6 +35,8 @@ def check_openai_version():
 
 # Function to process tool calls initiated by the assistant's API
 def process_tool_calls(client, thread_id, run_id, tool_data):
+    time.sleep(20)
+    
     while True:
         # Retrieve the status of the current run
         run_status = client.beta.threads.runs.retrieve(thread_id=thread_id, run_id=run_id)
