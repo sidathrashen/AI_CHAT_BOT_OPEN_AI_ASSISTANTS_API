@@ -73,7 +73,16 @@ def chat():
         
 
     # Process any tool calls that are required by the assistant's response
-    core_functions.process_tool_calls(client, thread_id, run.id, 'tool_data')
+    # core_functions.process_tool_calls(client, thread_id, run.id, 'tool_data')
+
+    while True:
+        # Retrieve the status of the current run
+        run_status = client.beta.threads.runs.retrieve(thread_id=thread_id, run_id=run.id)
+        if run_status.status == 'completed':
+            print(f"run_status for thread_id: {thread_id} is {run_status}")
+            break
+        elif run_status.status == 'requires_action':
+            print(f"run_status for thread_id: {thread_id} is {run_status}")
 
     # Retrieve the assistant's response messages
     messages = client.beta.threads.messages.list(thread_id=thread_id)
