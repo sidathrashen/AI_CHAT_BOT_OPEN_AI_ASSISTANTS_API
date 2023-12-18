@@ -5,6 +5,7 @@ import openai
 import core_functions
 import assistant
 from flask import Flask, render_template
+import time
 
 # Configure the logging level to INFO for better visibility of operations
 logging.basicConfig(level=logging.INFO)
@@ -69,6 +70,9 @@ def chat():
     # Create a run to get the assistant's response
     run = client.beta.threads.runs.create(thread_id=thread_id,
                                           assistant_id=assistant_id)
+    
+    time.sleep(20)
+    
     # Process any tool calls that are required by the assistant's response
     core_functions.process_tool_calls(client, thread_id, run.id, tool_data)
 
