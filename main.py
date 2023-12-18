@@ -83,6 +83,9 @@ def chat():
             break
         elif run_status.status == 'requires_action':
             print(f"run_status for thread_id: {thread_id} is {run_status}")
+        else:
+            print(f"run_status for thread_id: {thread_id} is {run_status}")
+
 
     # Retrieve the assistant's response messages
     messages = client.beta.threads.messages.list(thread_id=thread_id)
