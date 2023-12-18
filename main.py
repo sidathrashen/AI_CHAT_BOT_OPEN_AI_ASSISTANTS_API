@@ -73,7 +73,7 @@ def chat():
         
 
     # Process any tool calls that are required by the assistant's response
-    core_functions.process_tool_calls(client, thread_id, run.id, 'tool_data')
+    core_functions.process_tool_calls(client, thread_id, run.id, tool_data)
 
     # Retrieve the assistant's response messages
     messages = client.beta.threads.messages.list(thread_id=thread_id)
