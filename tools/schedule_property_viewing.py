@@ -4,7 +4,7 @@ import re
 from datetime import datetime
 
 # Set the webhook URL as an environment variable for security and flexibility
-WEBHOOK_URL = "YOUR_WEBHOOK_URL"  # Replace with your actual webhook URL
+WEBHOOK_URL = os.environ['WEBHOOK_URL']  # Replace with your actual webhook URL
 
 # Define the tool's configuration for scheduling property viewings
 tool_config = {
