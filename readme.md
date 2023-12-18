@@ -59,6 +59,7 @@ Set the necessary environment variables. You can use a `.env` file or export the
 - `OPENAI_API_KEY`
 - `RAPID_API_KEY`
 - `WEBHOOK_URL`
+- `CUSTOM_API_KEY`
 
 ### Core Functions
 
@@ -76,7 +77,7 @@ To run the application, use the following command:
 flask run
 ```
 
-This will start a local server, typically accessible at `http://127.0.0.1:5000`.
+This will start a local server, typically accessible at `http://127.0.0.1:8080`.
 
 ### API Endpoints
 
@@ -85,24 +86,14 @@ The application provides several API endpoints, such as:
 - `/start`: Initiates a conversation with the user.
 - `/chat`: Handles user input and provides appropriate responses.
 
+
 ## Built With
 
 - [Flask](https://flask.palletsprojects.com/) - The web framework used
 - [Requests](https://docs.python-requests.org/) - Used for handling HTTP requests
 
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## Acknowledgments
-
-- Thanks to the contributors who have helped with this project.
-- Special thanks to the Flask and Python communities for their invaluable resources.
-
----
-
-Remember to create the `CONTRIBUTING.md` and `LICENSE.md` files if you reference them in your README. Also, customize the README as needed to accurately reflect your project's structure and requirements.
