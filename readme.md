@@ -3,6 +3,8 @@
 
 This application is designed to facilitate real estate transactions and inquiries, leveraging a Flask-based web service to interact with users for property searches, viewings, and more.
 
+https://www.loom.com/share/96699d257afd4cca91de38cf4f639a6f?sid=a09c40fc-0839-4ef8-946a-0b9658d04d43
+
 ## Getting Started
 
 These instructions will guide you through setting up and running the application on your local machine.
