@@ -70,11 +70,10 @@ def chat():
     # Create a run to get the assistant's response
     run = client.beta.threads.runs.create(thread_id=thread_id,
                                           assistant_id=assistant_id)
-    
-    time.sleep(20)
-    
+        
+
     # Process any tool calls that are required by the assistant's response
-    core_functions.process_tool_calls(client, thread_id, run.id, tool_data)
+    core_functions.process_tool_calls(client, thread_id, run.id, 'search_real_estate_listings')
 
     # Retrieve the assistant's response messages
     messages = client.beta.threads.messages.list(thread_id=thread_id)

@@ -42,6 +42,8 @@ def process_tool_calls(client, thread_id, run_id, tool_data):
             print(f"run_status for thread_id: {thread_id} is {run_status}")
             break
         elif run_status.status == 'requires_action':
+            print(f"run_status for thread_id: {thread_id} is {run_status}")
+
             # Process each tool call that requires action
             for tool_call in run_status.required_action.submit_tool_outputs.tool_calls:
                 function_name = tool_call.function.name
