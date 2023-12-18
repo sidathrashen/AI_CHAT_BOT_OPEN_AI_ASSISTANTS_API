@@ -47,7 +47,7 @@ def process_tool_calls(client, thread_id, run_id, tool_data):
             print(f"run_status for thread_id: {thread_id} is {run_status}")
 
             # Process each tool call that requires action
-            for tool_call in run_status.required_action.submit_tool_outputs.tool_calls:
+            for index,tool_call in enumerate(run_status.required_action.submit_tool_outputs.tool_calls):
                 function_name = tool_call.function.name
 
                 try:
@@ -60,7 +60,7 @@ def process_tool_calls(client, thread_id, run_id, tool_data):
 
                 # Execute the corresponding function if it exists in the tool data
                 if function_name in tool_data:
-                    function_to_call = tool_data[0]
+                    function_to_call = tool_data[index]
                     output = function_to_call(arguments)
                     # Submit the output of the tool call
                     client.beta.threads.runs.submit_tool_outputs(
