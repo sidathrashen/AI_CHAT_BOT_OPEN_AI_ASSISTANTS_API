@@ -1,6 +1,3 @@
-Certainly! Below is a sample `README.md` for your application, including instructions for setting up virtual environments on different operating systems and details about core functions:
-
----
 
 # Real Estate Assistant Application
 
