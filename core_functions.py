@@ -59,8 +59,8 @@ def process_tool_calls(client, thread_id, run_id, tool_data):
                     arguments = {}  # Set default value for arguments
 
                 # Execute the corresponding function if it exists in the tool data
-                if function_name in tool_data["function_map"]:
-                    function_to_call = tool_data["function_map"][0]
+                if function_name in tool_data:
+                    function_to_call = tool_data[0]
                     output = function_to_call(arguments)
                     # Submit the output of the tool call
                     client.beta.threads.runs.submit_tool_outputs(
